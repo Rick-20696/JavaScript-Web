@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <TITLE>MANIPULANDO A DOM</TITLE>
+    </HEAD>
+    <BODY>
+        <div id="app">
+        </div>
+
+        <script>
+            //Pelo DOM podemos realemente manipular os elementos, ou cria , ou remover. Duas formas básicas de criar elementos é com "DOM.innerHTML" e também com "DOM.createElement('Tag que eu quero criar')"
+            //A inserção de textos comuns (Entre as Tags) é através do "TextNode". Para o filiar a um elemento, usa-se o appendChild()
+            //A inserção de atributos no elemento é com o "setAttribute()"
+
+            let div = document.getElementById("app"); 
+            let link = document.createElement("a");
+            let txt = document.createTextNode("RocketSeat aulas");
+
+            div.innerHTML = "<input type='button' value='Butão' >"
+
+            link.setAttribute("href", "https://app.rocketseat.com.br/node/curso-java-script");
+            link.appendChild(txt);
+            div.appendChild(link);
+        </script>
+    </BODY>
+</HTML>
+

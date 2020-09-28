@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <TITLE>MANIPULANDO A DOM</TITLE>
+    </HEAD>
+    <BODY>
+        <div id="app">
+            <input id="txt" type="text" name="Nome">
+            <input id="btn" class="name" type="button" value="Passa aqui"> 
+        </div>
+
+        <script>
+            //Ao invés de pegar a função pelo elemento, eu pego o elemento e atribuo a ele uma função.
+            let inputElement = document.getElementById("txt");
+
+            //Essas formas me retornam um array. Eu posso passar "x" depois para limitar 
+            let inputElement1 = document.getElementsByTagName("input")[0];
+            let inputElement2 = document.getElementsByClassName("name")[0];
+            
+            //Este retorn apenas um elemento e busca através do DOM "físico", funciona como uma rota
+            let inputElement3 = document.querySelector("body div#app input#btn ");
+
+            console.log(inputElement, " ");
+            console.log(inputElement1, " ");
+            console.log(inputElement2, " ");
+            console.log(inputElement3, " ");
+            
+
+            inputElement3.onmouseover = function () {
+                document.getElementById("btn").value = "O curso tá aqui";
+            }
+
+        </script>
+    </BODY>
+</HTML>

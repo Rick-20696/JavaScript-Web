@@ -30,5 +30,3 @@ console.log("\n", a > b);
 console.log(a < b);
 console.log(a <= b);
 console.log(a >= b);
-
-//Lógicos

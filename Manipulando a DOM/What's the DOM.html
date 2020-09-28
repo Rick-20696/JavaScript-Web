@@ -1,0 +1,22 @@
+<!--Dom é a arvore de elementos do HTML-->
+
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <TITLE>MANIPULANDO A DOM</TITLE>
+    </HEAD>
+    <BODY>
+        <div id="app">
+            <!--Aqui eu estou manipulando a função de acordo com o tratador de evento-->
+            <input id="btn" type="button" onmouseover="alertClickButtom()" value="Passa aqui"> 
+        </div>
+
+        <script>
+            function alertClickButtom() {
+                //Aqui eu estou usando o DOM para fazer alguma coisa sobre um elemento, tudo através do DOM
+                document.getElementById("btn").value = "O curso tá aqui";
+            }
+        </script>
+    </BODY>
+</HTML>

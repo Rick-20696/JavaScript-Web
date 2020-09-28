@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<HTML>
+    <HEAD>
+        <META charset="UTF-8">
+        <TITLE>MANIPULANDO A DOM</TITLE>
+    </HEAD>
+    <BODY>
+        <div id="app">
+        </div>
+
+        <script>
+            //A alteração dos estilos vem também através do DOM, basta ter o elemento, selecionar o atributo "style" e qual propriedade alterar
+            let div = document.getElementById("app");
+            div.innerHTML = "<input id='btn' type='button' value='button'>";
+
+            div.style.width = 300;
+            div.style.width = 300;
+            div.style.backgroundColor = "#f00";           
+        </script>
+    </BODY>
+</HTML>
