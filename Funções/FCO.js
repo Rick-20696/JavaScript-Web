@@ -8,7 +8,7 @@ function a() {
 
 console.log(a());
 
-//Atribuíndo à uma variável. Essa é uma função anônima,
+//Atribuíndo à uma variável. Essa é uma função anônima! Vale lembrar que a função é um dado, e por isso tem outros atributos como por exemlo: bind()
 const b = function () {
 
 }
