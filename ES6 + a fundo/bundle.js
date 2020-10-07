@@ -35,11 +35,12 @@ var List = /*#__PURE__*/function () {
     key: "add",
     value: function add(element) {
       this.array.push(element);
+      console.log(this.array);
     }
   }]);
 
   return List;
-}(); //Isso é uma herança
+}(); //Isso é uma herança. Eu posso também adicionar outras coisas nela
 
 
 var TaskList = /*#__PURE__*/function (_List) {
@@ -48,17 +49,69 @@ var TaskList = /*#__PURE__*/function (_List) {
   var _super = _createSuper(TaskList);
 
   function TaskList() {
+    var _this;
+
     _classCallCheck(this, TaskList);
 
-    return _super.apply(this, arguments);
+    //Chamando o construtor de List
+    _this = _super.call(this);
+    _this.user = 'Ricardo';
+    return _this;
   }
+
+  _createClass(TaskList, [{
+    key: "printUser",
+    value: function printUser() {
+      console.log(this.user);
+    }
+  }]);
 
   return TaskList;
 }(List);
+
+var TaskList2 = /*#__PURE__*/function () {
+  function TaskList2() {
+    _classCallCheck(this, TaskList2);
+
+    this.tasks = [];
+  } //Métodos estáticos não enxergam o restante da classe...
+  //server, geralmente, para receber um valor e retornar outro independente da classe!
+
+
+  _createClass(TaskList2, null, [{
+    key: "addTask",
+    value: function addTask() {
+      this.tasks.push('New Task');
+      console.log(this.tasks);
+    }
+  }]);
+
+  return TaskList2;
+}();
+
+var MyMath = /*#__PURE__*/function () {
+  function MyMath() {
+    _classCallCheck(this, MyMath);
+  }
+
+  _createClass(MyMath, null, [{
+    key: "sum",
+    //Aqui é apenas um exemplo, mas serve para demonstrar que métodos estáticos são independentes! 
+    value: function sum(a, b) {
+      return a + b;
+    }
+  }]);
+
+  return MyMath;
+}();
 
 var myList = new TaskList();
 
 document.getElementById('newTask').onclick = function () {
   //Funciona do mesmo jeito
-  myList.add();
+  myList.add('New task');
+  myList.printUser();
 };
+
+console.log(MyMath.sum(5, 5));
+TaskList2.addTask();
