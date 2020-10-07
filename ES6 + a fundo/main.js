@@ -5,4 +5,8 @@ class Test {
     method() {
 
     }
+
+    outro() {
+        
+    }
 }
