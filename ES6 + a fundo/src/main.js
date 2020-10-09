@@ -26,9 +26,11 @@ class App {
             return;
 
         try{
-            const response = await api.get(`/repos/${inp}`);
+            //Por conta do contexto lexíco, eu tive que usar var
+            var response = await api.get(`/repos/${inp}`);
         }catch(error){
             alert('Repositório inexistente');
+            return;
         }
 
         const {name, description, html_url, owner: {avatar_url}} = response.data
