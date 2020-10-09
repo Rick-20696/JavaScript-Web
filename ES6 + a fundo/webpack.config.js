@@ -1,14 +1,23 @@
 module.exports = {
     //Qual arquivo principal para executar JS ES6+
-    entry: './main.js',
+    entry: [
+        '@babel/polyfill',
+        './src/main.js',
+    ],
+
+    devtool: 'eval-source-map',
 
     //Para qual lugar e aquivo mando o código convertido
     output: {
         
         //Variável que se refere ao diretório raiz do arquivo
-        path: __dirname,
+        path: __dirname + '/public',
         filename: 'bundle.js'
     },
+
+    devServer: {
+        contentBase: __dirname + '/public'
+    },  
 
     module: {
         
