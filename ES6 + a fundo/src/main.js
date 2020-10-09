@@ -1,9 +1,12 @@
+import api from './api';
+
 class App {
     constructor() {
         this.repositories = [];
 
         this.form = document.getElementById('form');
         this.ul = document.getElementById('list');
+        this.input = document.getElementById('input');
 
         this.registerEvents();
     }
@@ -12,19 +15,32 @@ class App {
         this.form.onsubmit = event => this.addRepository(event);
     }
 
-    addRepository(event) {
+    //Transformando em um método assíncrono
+    async addRepository(event) {
         //Essa linha previne que o formulário fique atualizando a página desnecessaramente
         event.preventDefault();
 
+        const inp = this.input.value;
+
+        if(inp.length === 0)
+            return;
+
+        const response = await api.get(`/repos/${inp}`);
+        const {name, description, html_url, owner: {avatar_url}} = response.data
+
+        //Aqui eu estou fazendo a sintaxe curta de notação de objeto: 
+        //o atributo do objeto tem o mesmo nome de uma variável criada
         this.repositories.push({
-            name: 'RicardoSousa83',
-            description: 'Estudante de Desenvolvimento de Sistemas',
-            avatar_ulr: 'https://avatars3.githubusercontent.com/u/62113652?=v4',
-            url: 'https://github.com/Rick-20696/Web',
+            name,
+            description,
+            avatar_url,
+            html_url,
         });
 
+
+        this.input.value = '';
         //No lugar do console.log() eu vou renderizar em tela
-        this.render()
+        this.render();
     }
 
     render() {
@@ -38,11 +54,11 @@ class App {
             let a = document.createElement('a');
             
             //Uma curiosidade: Minhas formatações de estilo não irão funcionar se eu estiver filiando os textos aos respectivos elementos 
-            img.setAttribute('src', repository.avatar_ulr);
+            img.setAttribute('src', repository.avatar_url);
             strong.appendChild(document.createTextNode(repository.name));
             p.appendChild(document.createTextNode(repository.description));
             a.setAttribute('target', '_blank');
-            a.setAttribute('href', repository.url);
+            a.setAttribute('href', repository.html_url);
             a.appendChild(document.createTextNode('Acessar'));
 
             lis.appendChild(img);
