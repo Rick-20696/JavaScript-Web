@@ -25,7 +25,12 @@ class App {
         if(inp.length === 0)
             return;
 
-        const response = await api.get(`/repos/${inp}`);
+        try{
+            const response = await api.get(`/repos/${inp}`);
+        }catch(error){
+            alert('Repositório inexistente');
+        }
+
         const {name, description, html_url, owner: {avatar_url}} = response.data
 
         //Aqui eu estou fazendo a sintaxe curta de notação de objeto: 
