@@ -34,8 +34,8 @@ class TaskList2 {
     //Métodos estáticos não enxergam o restante da classe...
     //server, geralmente, para receber um valor e retornar outro independente da classe!
     static addTask() {
-        this.tasks.push('New Task');
-        console.log(this.tasks);
+    //    this.tasks.push('New Task');
+    //    console.log(this.tasks);
     }
 }
 
