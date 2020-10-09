@@ -1,6 +1,5 @@
 .vs/
 
 node_modules
-yarn.lock
 
 *.txt
