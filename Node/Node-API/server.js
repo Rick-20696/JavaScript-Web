@@ -12,6 +12,7 @@ app.use(express.json());
 
 //Com o CORS eu permito acesso de outros dominíos, não só do localhost ou insonmia
 app.use(cors());
+
 //Conectando com o mongo
 mongoose.connect(
     'mongodb://localhost:27017/nodeapi',
