@@ -1,5 +1,5 @@
 //importando bibliotecas/frames/microserviços...
-const express = require('express');
+const express = require ('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
@@ -9,6 +9,7 @@ const app = express();
 
 //Com esse método eu permito enviar informações no formato JSON para a base!
 app.use(express.json());
+app.listen(3001);
 
 //Com o CORS eu permito acesso de outros dominíos, não só do localhost ou insonmia
 app.use(cors());
@@ -19,10 +20,11 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true}
 );
 
-//Temos que exigir que todos os models esteja registrados!
+//Temos que exigir que todos os models esteja registrados na base!
 requireDir('./src/models');
 
 //As rotas agora tem lugar próprio './src/routes.js'
 //No lugar da minha rota, eu coloco o "use()" que recebe todo tipo de requisição e manda para o arquivo das rotas.
 app.use('/api', require('./src/routes'));
-app.listen(3001);
+
+console.log('API rodando na porta 3001');
