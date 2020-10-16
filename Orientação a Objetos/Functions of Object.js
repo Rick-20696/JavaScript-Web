@@ -6,7 +6,7 @@ const people = {
     weight: 78.89
 }
 
-console.log('Attributes ->', Object.keys(people));
+console.log('Attributes -> ', Object.keys(people));
 console.log('Values ->', Object.values(people));
 console.log('Keys and Values ->', Object.entries(people));
 
