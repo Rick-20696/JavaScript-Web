@@ -10,14 +10,14 @@ const obj = {
 
 const json = JSON.stringify(obj)
 
-console.log(json);
-console.log(JSON.parse(json));
+//console.log(json);
+//console.log(JSON.parse(json));
 
 //A escrita de JSONs é apenas assim: ` "Atributo": valor/"valor" `
 //O JSON aceita qualquer tipo, booleans, string, numbers, arrays, objects exceto funções
 console.log(JSON.parse(`{
-    "atributeA": atr A,
-    "atributeB": atr B,
-    "atributeC": atr C,
-    "atributeD": atr D,
+    "atributeA": "atr A",
+    "atributeB": "atr B",
+    "atributeC": "atr C",
+    "atributeD": "atr D",
 }`));
