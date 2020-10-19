@@ -1,0 +1,9 @@
+{
+    "db": {
+        "client": "mysql",
+        "host": "localhost",
+        "port": 3333,
+        "user": "admin",
+        "pass": "123456"
+    }
+}
