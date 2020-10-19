@@ -7,7 +7,7 @@ let xhr = new XMLHttpRequest();
 xhr.open("GET", "https://api.github.com/users/Rick-20696");
 xhr.send(null);
 
-//O JS não espera a requisição terminar para depois executar o código, então ela é uma requisição assíncrona. Essas requisições demoram mais! 
+//O JS não espera a requisição terminar para depois executar o código, então ela é uma requisição assíncrona. Essas requisições são mais eficiêntes em questão de desempenho! 
 //Então eu preciso passar para esta função que é executada quando a resposta retornar 
 xhr.onreadystatechange = function() {
     //Eu preciso verificar se a resposta já retornou (o retorno é 4) para mostrar os dados. Vale lembrar que e RESPOSTA != RESULTADO, este é se deu certo ou não. Depois, eu executo meu algoritmo
