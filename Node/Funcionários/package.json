@@ -2,13 +2,17 @@
   "name": "employees",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Employee.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
   }
 }
