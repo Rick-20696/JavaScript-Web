@@ -15,8 +15,11 @@ const pass2 = (ctx, next) => {
 }
 const pass3 = (ctx) => ctx.value3 = '3';
 
+//Eu tenho um processo principal (função) que vai executar as funções middlewares
+//Basicamente ela vai executar todas as funções passando através de uma callback
 const exec = (ctx, ...middlewares) => {
     const execMiddleware = index => {
+
         if(middlewares && index < middlewares.length)
             middlewares[index](ctx, () => execMiddleware(index + 1))
     }
