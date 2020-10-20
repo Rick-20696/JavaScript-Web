@@ -4,17 +4,26 @@
  * 
  */
 
-//Middleware
+//Middlewares
 const pass1 = (ctx, next) => {
-    ctx.value = '1',
+    ctx.value1 = '1';
     next()
 }
 const pass2 = (ctx, next) => {
-    ctx.value = '2',
+    ctx.value2 = '2';
     next()
 }
-const pass1 = (ctx) => ctx.value = '3';
+const pass3 = (ctx) => ctx.value3 = '3';
 
 const exec = (ctx, ...middlewares) => {
-    
+    const execMiddleware = index => {
+        if(middlewares && index < middlewares.length)
+            middlewares[index](ctx, () => execMiddleware(index + 1))
+    }
+    execMiddleware(0);
 }
+
+const ctx = {};
+exec(ctx, pass2, pass1, pass3)
+console.log(ctx);
+
