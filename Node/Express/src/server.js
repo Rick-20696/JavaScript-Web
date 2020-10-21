@@ -11,6 +11,7 @@ const door = 3333;
 // ***Instanciando o aplicação (express)***
 const app = express();
 
+//Assim eu permito a entrada de dados no formato JSON, mas eu poderia passar dados com URL uncoded
 app.use(express.json())
 
 //GET é uma forma de requisição, toda requisição pode receber uma rota (no caso products), e uma função middleware como resposta

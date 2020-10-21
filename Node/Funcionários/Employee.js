@@ -1,3 +1,4 @@
+//A questão de entender o axios, aqui, não é tão importante, mas o consumo de um arquivo .json e aplicar os conceitos anteriores sim!
 const axios = require('axios');
 const url = 'http://files.cod3r.com.br/curso-js/funcionarios.json';
 
