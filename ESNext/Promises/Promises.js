@@ -1,10 +1,8 @@
-//Promisses são funções que não influenciam na linha de execução (ordem de execução do arquivo JS), mas devolvem o valor, depois de um tempo, seja positivo ou não.
+//Promisses são funções que não influenciam na linha de execução (ordem de execução do arquivo JS), mas devolvem a resposta, depois de um tempo, seja positivo ou não.
 let promise = function() {
 
-    //por padrão, classe recebe uma função que tem como parâmetros duas funções.
+    //por padrão, a classe recebe uma função que tem como parâmetros duas funções.
     return new Promise(function(resolve, reject){
-        //Aqui eu vou ter o mesmo código de antes com exceção na verificação
-
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "https://api.github.com/users/Rick-20696");
         xhr.send(null);
