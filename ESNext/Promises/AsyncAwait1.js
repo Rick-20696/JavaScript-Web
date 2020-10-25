@@ -25,15 +25,38 @@ const getClass = char => {
     })
 }
 
-// → await só funciona em funções demarcadas com async
-let getStudents = async () => {
+//assíncrono
+//Nesse caso, as escritas serão colocadas no console primeiro que os valores das promises
+let getStudents1 = () => {
+    const clasA = getClass('A');
+    console.log('Class A');
+    clasA.then(console.log);
     
-    // → await não deixa o código de baixo ser excutado se caso esse não tenha sido resolvido, a promise não tenha sido resolvida
-    const clas = await getClass('A');
-
-    return clas
+    const clasB = getClass('B');
+    console.log('Class B');
+    clasB.then(console.log);
+    
+    const clasC = getClass('C');
+    console.log('Class B');
+    clasC.then(console.log);
 }
 
-//getClass('A').then(cl => console.log(cl))
-//getStudents().then(cl => cl.map(s => s.id))
-getStudents().then(students => students.map(s => s.nome)).then(s => console.log(s))
+//Assincrono como sincrono
+// → await só funciona em funções demarcadas com async
+let getStudents2 = async () => {
+    
+    // → await não deixa o código de baixo ser excutado se caso esse não tenha sido resolvido, a promise não tenha sido resolvida
+    const clasA = await getClass('A');
+    console.log('Class A');
+    console.log(clasA[0]);
+    
+    const clasB = await getClass('B');
+    console.log('Class B');
+    console.log(clasB[0]);
+    
+    const clasC = await getClass('C');
+    console.log('Class C');
+    console.log(clasC[0]);
+}
+
+getStudents2()
