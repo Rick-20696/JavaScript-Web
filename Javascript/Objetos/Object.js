@@ -2,7 +2,7 @@
 
 const product = new Object;
 
-//Posso criar dinâmicamente
+//Posso criar dinâmicamente 
 product.name = 'Notebook';
 product['product brand'] = 'Vaio';
 product.price = 2440.00;
