@@ -1,6 +1,6 @@
 //A inferência de tipos funciona muito bem, porém quando inferido o tipo será fixo!
-let a = 'TypeScript';
-console.log(typeof a);
+let s = 'TypeScript';
+console.log(typeof s);
 //a = 123;
 
 //Em relação aos números, o ts usa o mesmo conceito do js: não diferencia int de float
