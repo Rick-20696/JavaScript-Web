@@ -3,6 +3,5 @@
 node_modules
 coverage
 masterclass  
-build
 
 *.txt
