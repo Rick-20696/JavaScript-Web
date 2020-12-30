@@ -37,7 +37,6 @@ app.post('/product', (req, resp) => {
         name, 
         price
     }
-
     resp.send(database.save(product));
 })
 

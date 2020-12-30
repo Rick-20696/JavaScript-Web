@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset='utf-8'>
+            <title>Min css</title>
+
+            <!--O css pode ser definido dentro de uma tag "<Style>
+                Mas também vale lembrar que podemos pré preparar a página por HTML também
+                como é o caso dessa <meta> que vai colocar um tamanho da página escalável ao display 
+                "-->
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <style>
+                /*
+                 A aplicagem de estilo pode ser feito de 3 maneiras: pela TAG, Classe ou Id 
+
+                 TAG - vai ser aplicado em todos os elemtnos que tem a TAG
+                 Classe (.) - Posso marcar as tags com a classe ou várias classes
+                 ID (#) - Deve ser único na página toda, ou seja, não reusável
+
+                 Sintaxe CSS é sempre chave-valor, como "color: violet;".
+
+                 */
+
+                 #main-text{
+                    color: violet;
+                 }
+
+                 .red{
+                    color: red;
+                 }
+                 .upper-case{
+                    text-transform: uppercase;
+                 }
+                 p{
+                    text-align: center;
+                 }
+            </style>
+        </head>
+    <body>
+        <!--
+            Posso, através da DOM junto com o CSS, encontrar esse elementos
+        -->
+        <h1 id="main-text">css</h1>
+        <span class="red ">Text 1</span><br>
+        <span class="red upper-case">Text 2</span>
+        <p my-attribute>CSS style</p>
+        
+        <script>
+            console.log('Tag: ', document.querySelector('h1'));
+            console.log('Class: ', document.querySelector('.red'));
+            console.log('Array of a class: ', document.querySelectorAll('.red'));
+            console.log('Id: ', document.querySelector('#main-text'));
+            console.log('Attribute: ', document.querySelector('[my-attribute]'));
+        </script>
+    </body>
+</html>

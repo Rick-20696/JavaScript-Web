@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css.css">
+
+    <title>Index</title>
+    </head>
+    <body>
+        <header>
+            <h1>HTML</h1>
+        </header>
+        <nav>
+            <div class="link-content">
+            <a href="content/text_1.html">1 - Text #1</a>
+            </div>
+            <a href="content/text_2.html">2 - Text #2</a>
+        </nav>
+        <section id="content"></section>
+        <script>
+            document.querySelectorAll('a').forEach(link => {
+                link.onclick = (l) => {
+                    l.preventDefault()
+
+                    const content = document.getElementById('content')
+                    fetch(link.href)
+                        .then(response => response.text())
+                        .then(html => content.innerHTML = html)
+                }
+            })
+        </script>
+    </body>
+</html>
