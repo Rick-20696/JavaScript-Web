@@ -1,0 +1,52 @@
+<video id="video" width="600px" height="350px" controlsLis="nodownload" >
+  <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">  
+</video>
+
+<div progress="video" class="progress">
+  <div></div>
+</div>
+
+<div>
+  <button play="video" onclick="play(this)">play</button>
+  <button play="video" onclick="pause(this)">pause</button>
+</div>
+
+<style>
+  .progress{
+    height: 20px;
+    width: 600px;
+    border: solid .5px #433;
+    margin-bottom: 5px;
+  }
+
+  .progress > div {
+    background-color: red;
+    color: #343;
+    height: 100%;
+    width: 0%;
+  }
+</style>
+
+<script>
+  
+  function play(prop) {
+    const video = document.getElementById(prop.getAttribute('play'))
+    
+    video.play()
+  }
+  
+  function pause(prop) {
+    const video = document.getElementById(prop.getAttribute('play'))
+    
+    video.pause()
+  }
+
+  setInterval(() => {
+    const video = document.getElementById('video')
+    const progressDiv = document.querySelector('[progress] > div')
+
+    const currentProgress = (video.currentTime / video.duration) * 100;
+
+    progressDiv.style.width = `${currentProgress}%`
+  }, 30)
+</script>
