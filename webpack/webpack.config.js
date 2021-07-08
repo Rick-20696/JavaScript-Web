@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   mode: 'development',
@@ -7,12 +8,18 @@ module.exports = {
     filename: 'main.js',
     path: __dirname + '/public'
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'app.css' //Nome do arquivo a ser gerado 
+    })
+  ],
   module: {
     rules: [
       { 
         test: /\.css$/,
         use: [
-          'style-loader', //Injeta o css via DOM
+          MiniCssExtractPlugin.loader, 
+          // 'style-loader', //Injeta o css via DOM --- Este loader é conflitante com MiniCss, então estou usando apenas 1
           'css-loader' //interpret @import, url(), etc
         ]
       }
