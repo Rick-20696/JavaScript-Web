@@ -1,0 +1,17 @@
+{
+  "name": "web-moderno-webpack",
+  "version": "1.0.0",
+  "description": "Learning webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack",
+    "start:build": "webpack && node ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.43.0",
+    "webpack-cli": "^4.7.2"
+  }
+}
