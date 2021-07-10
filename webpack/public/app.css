@@ -4,6 +4,13 @@
 body {
   background-color: aqua; }
 
+.div-img {
+  background-image: url(5a908e0c0cd593c60711f3f5c6ab588f.png);
+  background-position: center;
+  height: 512px;
+  width: 512px;
+  margin: auto; }
+
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./src/assets/main-content.scss ***!
   \************************************************************************************************************************/
