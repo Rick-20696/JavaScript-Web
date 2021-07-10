@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./src/assets/main-content.scss":
+/*!**************************************!*\
+  !*** ./src/assets/main-content.scss ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://web-moderno-webpack/./src/assets/main-content.scss?");
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _people__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./people */ \"./src/people.js\");\n/* harmony import */ var _assets_app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/app.css */ \"./src/assets/app.css\");\n\r\n\r\n\r\nconst p1 = new _people__WEBPACK_IMPORTED_MODULE_0__.default()\r\nconsole.log(p1.greeting())\n\n//# sourceURL=webpack://web-moderno-webpack/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _people__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./people */ \"./src/people.js\");\n/* harmony import */ var _assets_app_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/app.css */ \"./src/assets/app.css\");\n/* harmony import */ var _assets_main_content_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/main-content.scss */ \"./src/assets/main-content.scss\");\n\r\n\r\n\r\n\r\nconst p1 = new _people__WEBPACK_IMPORTED_MODULE_0__.default()\r\nconsole.log(p1.greeting())\n\n//# sourceURL=webpack://web-moderno-webpack/./src/main.js?");
 
 /***/ }),
 
