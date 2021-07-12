@@ -2,8 +2,15 @@
   font-family: 'Sansita', sans-serif;;
 }
 
-.content {
- background-color: #F7F7F7;
+.centerizered{
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .bg-orange {
