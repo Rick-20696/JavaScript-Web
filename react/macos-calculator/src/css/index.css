@@ -1,0 +1,23 @@
+* {
+  font-family: Verdana, Tahoma, sans-serif;
+}
+
+.content {
+ background-color: #F7F7F7;
+}
+
+.bg-orange {
+  background-color: #FD9E2B;
+}
+
+.bg-dark-1 {
+  background-color: #2B2D2F;
+}
+
+.bg-dark-2 {
+  background-color: #3F4143;
+}
+
+.bg-dark-3 {
+  background-color: #5F6062;
+}
