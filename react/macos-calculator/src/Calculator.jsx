@@ -3,13 +3,50 @@ import './css/calculator.css'
 
 class Calculator extends React.Component{
   state = {
-    value: ''
+    value: '',
+    memoryValue: 0,
+    lastOperation: ''
   }
   
+  setMemoryAndOperation(operation){
+    this.setState({memoryValue: this.state.value, value: ''})
+    this.setState({lastOperation: operation})
+  } 
+
   newOperation(operation) {
-    console.log(operation)
+    switch(operation){
+      case 'AC': 
+        this.setState({memoryValue: 0, value: ''})
+        break;
+      case '+-':
+        console.log('+-')
+        break;
+      case '%':
+        console.log('+-')
+        break;
+      case '/':
+        this.setMemoryAndOperation('/')
+        break;
+      case 'X':
+        this.setMemoryAndOperation('/')
+        break;
+      case '-':
+        this.setMemoryAndOperation('/')
+        break;
+      case '+':
+        this.setMemoryAndOperation('/')
+        break;
+      case '=':
+        break;
+      default:
+        break;
+    }
   }
   
+  alreadyValueInMemory() {
+    return this.state.memoryValue
+  }
+
   alreadyPoint() {
     return this.state.value.includes('.')
   }
