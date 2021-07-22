@@ -5,7 +5,6 @@ class Calculator extends React.Component{
   state = {
     currentValue: '',
     memoryValue: 0,
-    onlyViewValue: '0',
     lastOperation: ''
   }
   
@@ -14,14 +13,15 @@ class Calculator extends React.Component{
   }
 
   setMemoryAndOperation(operation){
-    this.setState({memoryValue: this.state.currentValue, currentValue: ''})
-    this.setState({lastOperation: operation})
+    if(this.state.currentValue) this.setState({memoryValue: this.state.currentValue})
+          
+    this.setState({currentValue: '', lastOperation: operation})
   } 
 
   newOperation(operation) {
     switch(operation){
       case 'AC': 
-        this.setState({memoryValue: 0, currentValue: '', lastOperation: '', onlyViewValue: '0'})
+        this.setState({memoryValue: 0, currentValue: '', lastOperation: ''})
         break;
       case '+-':
         console.log('+-')
@@ -41,13 +41,27 @@ class Calculator extends React.Component{
       case '+':
         if(this.hasLastOperation()){
           const result = (Number(this.state.memoryValue) + Number(this.state.currentValue)).toString()
-          this.setState({ memoryValue: result, currentValue: '', onlyViewValue: result })
+          this.setState({memoryValue: result, currentValue: ''})
         } else {
-          this.setState({onlyViewValue: this.state.currentValue})
           this.setMemoryAndOperation('+')
         }
         break;
       case '=':
+        if(this.hasLastOperation()){
+          const memoryValue = Number(this.state.memoryValue)
+          const currentValue = Number(this.state.currentValue) || memoryValue 
+          let result 
+
+          this.state.lastOperation === '+'?
+            result = (memoryValue + currentValue).toString():
+          this.state.lastOperation === '-'?
+            result = (memoryValue - currentValue).toString():
+          this.state.lastOperation === '*'?
+            result = (memoryValue * currentValue).toString():
+            result = (memoryValue / currentValue).toString()
+                  
+          this.setState({memoryValue: result, currentValue: '', lastOperation: ''})
+        }
         break;
       default:
         break;
@@ -87,7 +101,7 @@ class Calculator extends React.Component{
     return (
       <section className="centerizered">
         <div className="bg-dark-1 layout">
-          <section className="visor">{this.state.currentValue? this.state.currentValue : this.state.onlyViewValue}</section>
+          <section className="visor">{this.state.currentValue? this.state.currentValue : this.state.memoryValue}</section>
           <section>
             <table>
               <tbody>
