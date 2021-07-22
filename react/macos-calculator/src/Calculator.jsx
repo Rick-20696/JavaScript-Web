@@ -3,20 +3,25 @@ import './css/calculator.css'
 
 class Calculator extends React.Component{
   state = {
-    value: '',
+    currentValue: '',
     memoryValue: 0,
+    onlyViewValue: '0',
     lastOperation: ''
   }
   
+  hasLastOperation(){
+    return this.state.lastOperation
+  }
+
   setMemoryAndOperation(operation){
-    this.setState({memoryValue: this.state.value, value: ''})
+    this.setState({memoryValue: this.state.currentValue, currentValue: ''})
     this.setState({lastOperation: operation})
   } 
 
   newOperation(operation) {
     switch(operation){
       case 'AC': 
-        this.setState({memoryValue: 0, value: ''})
+        this.setState({memoryValue: 0, currentValue: '', lastOperation: '', onlyViewValue: '0'})
         break;
       case '+-':
         console.log('+-')
@@ -28,13 +33,19 @@ class Calculator extends React.Component{
         this.setMemoryAndOperation('/')
         break;
       case 'X':
-        this.setMemoryAndOperation('/')
+        this.setMemoryAndOperation('X')
         break;
       case '-':
         this.setMemoryAndOperation('/')
         break;
       case '+':
-        this.setMemoryAndOperation('/')
+        if(this.hasLastOperation()){
+          const result = (Number(this.state.memoryValue) + Number(this.state.currentValue)).toString()
+          this.setState({ memoryValue: result, currentValue: '', onlyViewValue: result })
+        } else {
+          this.setState({onlyViewValue: this.state.currentValue})
+          this.setMemoryAndOperation('+')
+        }
         break;
       case '=':
         break;
@@ -48,20 +59,20 @@ class Calculator extends React.Component{
   }
 
   alreadyPoint() {
-    return this.state.value.includes('.')
+    return this.state.currentValue.includes('.')
   }
 
   concatNumber(number) {
     //Verificação temporária
-    if(this.state.value.length === 14)
+    if(this.state.currentValue.length === 14)
       return
 
     number === '.'?
       this.alreadyPoint()?
-        this.setState({value: this.state.value}):
-        this.setState({value: this.state.value.concat(number)})
+        this.setState({currentValue: this.state.currentValue}):
+        this.setState({currentValue: this.state.currentValue.concat(number)})
       :
-      this.setState({value: this.state.value.concat(number)})
+      this.setState({currentValue: this.state.currentValue.concat(number)})
   }
 
   clickButton(btnValue) {
@@ -76,7 +87,7 @@ class Calculator extends React.Component{
     return (
       <section className="centerizered">
         <div className="bg-dark-1 layout">
-          <section className="visor">{this.state.value? this.state.value : '0'}</section>
+          <section className="visor">{this.state.currentValue? this.state.currentValue : this.state.onlyViewValue}</section>
           <section>
             <table>
               <tbody>
