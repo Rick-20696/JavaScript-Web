@@ -41,7 +41,15 @@ class Calculator extends React.Component{
         this.setState({memoryValue: 0, currentValue: '', lastOperation: ''})
         break;
       case '+-':
-        console.log('+-')
+        if(this.state.currentValue){
+          let currentValue = this.state.currentValue
+          
+          currentValue.charAt(0) === '-'?
+            currentValue = currentValue.replace('-', ''):
+            currentValue = '-' + currentValue
+            
+          this.setState({currentValue: currentValue})
+        }
         break;
       case '%':
         console.log('+-')
