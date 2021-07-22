@@ -8,11 +8,28 @@ class Calculator extends React.Component{
     lastOperation: ''
   }
   
+  resolveLastOperation() {
+    const memoryValue = Number(this.state.memoryValue) 
+    const currentValue = Number(this.state.currentValue)
+    let result
+
+    this.state.lastOperation === '+'?
+      result = (memoryValue + currentValue).toString():
+    this.state.lastOperation === '-'?
+      result = (memoryValue - currentValue).toString():
+    this.state.lastOperation === 'X'?
+      result = (memoryValue * currentValue).toString():
+      result = (memoryValue / currentValue).toString()
+
+    return result
+  }
+
   hasLastOperation(){
     return this.state.lastOperation
   }
 
   setMemoryAndOperation(operation){
+    console.log(this.state.currentValue)
     if(this.state.currentValue) this.setState({memoryValue: this.state.currentValue})
           
     this.setState({currentValue: '', lastOperation: operation})
@@ -30,36 +47,44 @@ class Calculator extends React.Component{
         console.log('+-')
         break;
       case '/':
-        this.setMemoryAndOperation('/')
+        if(this.hasLastOperation()){
+          let result = this.resolveLastOperation()
+          this.setState({memoryValue: result, currentValue: '', lastOperation: '/'})
+        } else {
+          this.setMemoryAndOperation('/')
+        }
+
         break;
       case 'X':
-        this.setMemoryAndOperation('X')
+        if(this.hasLastOperation()){
+          let result = this.resolveLastOperation()
+          this.setState({memoryValue: result, currentValue: '', lastOperation: 'X'})
+        } else {
+          this.setMemoryAndOperation('X')
+        }
+
         break;
       case '-':
-        this.setMemoryAndOperation('/')
+        if(this.hasLastOperation()){
+          let result = this.resolveLastOperation()
+          this.setState({memoryValue: result, currentValue: '', lastOperation: '-'})
+        } else {
+          this.setMemoryAndOperation('-')
+        }
+        
         break;
       case '+':
         if(this.hasLastOperation()){
-          const result = (Number(this.state.memoryValue) + Number(this.state.currentValue)).toString()
-          this.setState({memoryValue: result, currentValue: ''})
+          let result = this.resolveLastOperation()
+          this.setState({memoryValue: result, currentValue: '', lastOperation: '+'})
         } else {
           this.setMemoryAndOperation('+')
         }
+
         break;
       case '=':
         if(this.hasLastOperation()){
-          const memoryValue = Number(this.state.memoryValue)
-          const currentValue = Number(this.state.currentValue) || memoryValue 
-          let result 
-
-          this.state.lastOperation === '+'?
-            result = (memoryValue + currentValue).toString():
-          this.state.lastOperation === '-'?
-            result = (memoryValue - currentValue).toString():
-          this.state.lastOperation === '*'?
-            result = (memoryValue * currentValue).toString():
-            result = (memoryValue / currentValue).toString()
-                  
+          let result = this.resolveLastOperation()
           this.setState({memoryValue: result, currentValue: '', lastOperation: ''})
         }
         break;
