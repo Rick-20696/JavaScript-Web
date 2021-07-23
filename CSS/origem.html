@@ -4,13 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
+    <!-- A preferência é para o último processado depois do inline -->
+    <!-- Origem externa -->
     <style>
-        /* ... */
+        /* Origem interna */
+        body {
+            background-color: aquamarine;
+        }
     </style>
+    <link rel="stylesheet" href="./css/externo.css">
 </head>
 
 <body>
-    <h1>E agora?</h1>
+    <!-- Origem inline -->
+    <h1 style="color: brown;">E agora?</h1>
 </body>
 
 </html>
