@@ -6,6 +6,24 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://specificity.keegan.st/ */
+
+        /* 1. Inline = 1000
+         * 2. Id = 100 
+         * 3. Classe/Atributo = 10
+         * 4. Elemento/Pseudos = 1
+         */
+
+         body {
+            font-size: 40px;
+         }
+
+         div {
+            background-color: #00b; color: #fff;
+         }
+         
+         div[wm-cor] {
+            background-color: orange;
+         }
     </style>
 </head>
 
