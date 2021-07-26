@@ -6,6 +6,29 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /* 1. !important é algo de extremo caso, passa por todas as regras!
+         * 2. seletores mais específicos ganham
+         * 3. Último processado em caso de empate
+         */
+
+         p {
+            background-color: #223;
+         }
+
+         /* Seletor de classe é mais específica do que seletor de elemento */
+         .observacao {
+            background-color: #5f5;
+            border: dashed 5px;
+            padding: 200px !important;
+            font-size: 40px;
+         }
+
+         /* Seletor de classe, associado a um elemento, é mais específico ainda */
+         p.observacao {
+            padding: 2px;
+            background: linear-gradient(to left, blue, purple);
+         }
     </style>
 </head>
 
