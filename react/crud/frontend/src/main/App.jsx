@@ -7,6 +7,7 @@ import Main from '../components/template/Main'
 import Logo from '../components/template/Logo'
 import Footer from '../components/template/Footer'
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props => 
   (
     <div className="app">
