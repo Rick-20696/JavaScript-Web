@@ -4,6 +4,7 @@ import React from 'react'
 export default props => 
   (
     <footer className="footer">
-      Rodapé
+      Feito com <i className="fa fa-heart text-danger"></i><br />
+      Por: <strong>sousa83</strong>
     </footer>
   )
