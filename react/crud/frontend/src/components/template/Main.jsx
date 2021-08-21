@@ -1,9 +1,9 @@
 import '../../styles/Main.css'
 import React, { Fragment } from 'react'
-import Header from './Header'
+import { Header } from './Header'
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default props => 
+export const Main = props => 
   (
     <Fragment>
       <Header {...props}/>
