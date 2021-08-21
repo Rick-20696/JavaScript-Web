@@ -1,4 +1,4 @@
-import './Nav.css'
+import '../../styles/Nav.css'
 import React from 'react'
 
 const BASE = '#' 

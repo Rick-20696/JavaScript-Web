@@ -1,4 +1,4 @@
-import './Main.css'
+import '../../styles/Main.css'
 import React, { Fragment } from 'react'
 import Header from './Header'
 
