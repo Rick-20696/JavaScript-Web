@@ -9,6 +9,11 @@
       "id": 2,
       "name": "Maria Julia da Silva",
       "email": "mjds@empresa.com"
+    },
+    {
+      "name": "José gomes",
+      "email": "Jose_gomes@gmail.com",
+      "id": 3
     }
   ]
 }
