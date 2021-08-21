@@ -1,22 +1,22 @@
 import '../../styles/Nav.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const BASE = '#' 
 const routes = [
-  { route: `${BASE}/`, iconName: 'home', label: 'Início' },
-  { route: `${BASE}/users`, iconName: 'users', label: 'Usuários' },
+  { route: '/', iconName: 'home', label: 'Início' },
+  { route: '/users', iconName: 'users', label: 'Usuários' },
 ]
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default props => 
+export const Nav = props => 
   <aside className="menu-area">
     <nav className="menu">
       {
         routes.map((route, i) => {
           return (
-            <a key={i} href={route.route}>
+            <Link key={i} to={route.route}>
               <i className={`fa fa-${route.iconName}`} /> {route.label}
-            </a>
+            </Link>
           )
         })
       }
