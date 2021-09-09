@@ -6,6 +6,29 @@
     <title>Display</title>
     <style>
         /* ... */
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: tomato;
+        }
+
+        ul { padding: 0; }
+        div { background-color: seagreen; }
+        span { background-color: dodgerblue; }
+        li { background-color: purple; }
+
+        div, span, li {
+            width: 200px;
+            height: 80px;
+
+            padding-top: 30px;
+            text-align: center;
+
+            /* Vão ser separados em blocos, cada um em sua linha */
+            /* Vão ser alinhados na mesma linha, mas sem configuração de tamanho do conteúdo */
+            /* Vão ser alinhados na mesma linha, com configuração do conteúdo */
+            display: inline-block; 
+        }
     </style>
 </head>
 
