@@ -5,7 +5,63 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+
+      div {
+        font-size: 2em;
+        padding: 30px;
+        border: solid 5px #222;
+      }
+
+      .static {
+        position: static; /* Padrão */
+        top: 100px; /* Desconsiderada */
+        left: 100px;  /* Desconsiderada */
+        background-color: blue;
+      }
+
+      .fixed {
+        position: fixed; /* Leva em consideração o elemento anteior */
+        bottom: 30px; /* Considera */
+        right: 0px; /* Considera */
+        background-color: tomato;  
+      }
+
+      .relative1 {
+        position: relative; /* Leva em consideração ao elemento anteior */
+        left: 50px;
+        top: 5px;
+        background-color: blueviolet;
+      }
+
+      .absolute1 {
+        position: absolute; /* Não leva em consideração o anterior, em alguns casos */
+        left: 320px;
+        top: 190px;
+        background-color: violet;
+      }
+
+      .relative2 {
+        position: relative;
+        left: 5px;
+        top: 2000px;
+        width: 200px;
+        height: 200px;
+      }
+
+      .absolute2 {
+        position: absolute; 
+        left: 10px;
+        top: 10px;
+        width: 20px;
+        height: 30px;
+        background-color: yellowgreen;
+      }
+
+      .sticky {
+        position: sticky; /* O sticky vai, dependendo do posicionamento no viewport, se manter estático*/
+        top: 10px;
+        background-color: brown;
+      }
     </style>
 </head>
 
