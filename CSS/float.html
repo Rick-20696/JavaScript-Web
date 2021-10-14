@@ -5,24 +5,41 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+        /*
+          O Float de um elemento pode ser desconsiderado para outros elementos.
+          O forçamento dessa consideração se dá pelo uso da propriedade "clear" 
+         */
         body {
             background-color: #222;
         }
 
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            clear: right;
+            float: left;
         }
         
         .c3 {
             background-color: blue;
+            float: right;
+            clear: left;
+            
         }
 
         .c4 {
             background-color: orange;
+            clear: right;
+            float: left;
+        }
+
+        div { 
+          height: 150px;
+          width: 150px;
         }
     </style>
 </head>
