@@ -5,7 +5,44 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        /*
+          Absolutas (px, cm, ...): 
+            Não tanto utilizado em desing de páginas, salve se pixel.
+            Vale lembrar que 1 pixel de css é normalizado e não correspondente ao monitor
+          
+          Viewport (vh, vw, vmin, vmax):
+            1v(x) --> 1% do x;
+            vmin  --> menor dimensão, independente se for o W ou H
+            vmax  --> maior dimensão, independente se for o W ou H
+            
+          Font (rem, em, px, ...):  
+            rem --> Tamanho relativo ao raiz da página
+            em --> Tamanho relativo ao pai do elemento
+         */
+
+         .unidades-absolutas {
+           position: absolute;
+           font-size: 20px;
+           margin: 30px;
+           width: 4cm;
+           height: 20mm;
+           top: 150px;
+           left: 200px;
+           border: solid 1vw #efdefa;
+
+         }
+
+         .unidades-relativas {
+           position: absolute;
+           font-size: 4em; /* O tamanho da fonte, cconfigurada no browser, pode impactar*/
+           padding: 5%;
+           border: solid 1vw #efdefa;
+           margin: .8%;
+           width: 20vw;
+           height: 15vh;
+           bottom: 5%;
+           right: 5%;
+         }
     </style>
 </head>
 
