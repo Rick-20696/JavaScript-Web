@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <title>Media Query</title>
     <style>
+        @media (max-width: 600px) {
+          .muito-pequeno {
+            display: block;
+          }
+        }
+
+        @media (max-width: 1000px), (orientation: portrait) {
+          .muito-pequeno {
+            display: block;
+          }
+        }
+
         div {
             font-size: 40px;
             margin: 20px;
